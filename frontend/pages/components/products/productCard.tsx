@@ -1,16 +1,12 @@
 import { ComponentType } from "react";
 import { Col, Card, CardImg } from "react-bootstrap";
+import { ProductInfo } from "../../../types/productInfo";
 
-type ProductInfo = {
-  name: string;
-  description: string;
-  img: string;
-  price: number;
-  averageEvaluation?: number;
-  evaluations?: number;
+interface ProductCard {
+  readonly product: ProductInfo;
 }
 
-const ProductCard: ComponentType<ProductInfo> = (product) => {
+const ProductCard: ComponentType<ProductCard> = ({product}: ProductCard) => {
   return (
     <Col>
       <Card className="shadow-sm">

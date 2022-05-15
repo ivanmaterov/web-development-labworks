@@ -17,11 +17,24 @@ djangorestframework-stubs==1.4.0  # https://github.com/typeddjango/djangorestfra
 # Code quality
 # ------------------------------------------------------------------------------
 flake8==4.0.1  # https://github.com/PyCQA/flake8
-flake8-isort==4.1.1  # https://github.com/gforcada/flake8-isort
+# A plugin for Flake8 finding likely bugs and design problems in your program.
+# https://github.com/PyCQA/flake8-bugbear
+flake8-bugbear
+# Extension to enforce better comma placement.
+# https://github.com/PyCQA/flake8-commas
+flake8-commas
+# A flake8 plugin checking common style issues or inconsistencies with pytest-based tests.
+# https://github.com/m-burst/flake8-pytest-style
+flake8-pytest-style
+# McCabe complexity checker
+# https://github.com/PyCQA/mccabe
+mccabe
 coverage==6.3.2  # https://github.com/nedbat/coveragepy
 black==22.3.0  # https://github.com/psf/black
 pylint-django==2.5.3  # https://github.com/PyCQA/pylint-django
 pylint-celery==0.3  # https://github.com/PyCQA/pylint-celery
+pylint_pytest  # https://github__com.teameo.ca/carsongee/pytest-pylint
+pylint_quotes  # https://github.com/edaniszewski/pylint-quotes
 pre-commit==2.19.0  # https://github.com/pre-commit/pre-commit
 
 # Django

@@ -1,0 +1,23 @@
+from . import docker
+
+##############################################################################
+# Run commands
+##############################################################################
+
+
+def run_web(context, command, watchers=()):
+    """Run command in``web`` container.
+    docker-compose run --rm web <command>
+    """
+    return docker.docker_compose_run(
+        context,
+        params="--rm --service-ports",
+        container="django",
+        command=command,
+        watchers=watchers,
+    )
+
+
+def run_python(context, command, watchers=()):
+    """Run command using web python interpreter."""
+    return run_web(context, " ".join(["python3", command]), watchers=watchers)

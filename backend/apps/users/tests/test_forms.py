@@ -1,6 +1,5 @@
-"""
-Module for all Form Tests.
-"""
+# pylint: skip-file
+"""Module for all Form Tests."""
 import pytest
 from django.utils.translation import gettext_lazy as _
 
@@ -30,7 +29,7 @@ class TestUserAdminCreationForm:
                 "username": user.username,
                 "password1": user.password,
                 "password2": user.password,
-            }
+            },
         )
 
         assert not form.is_valid()

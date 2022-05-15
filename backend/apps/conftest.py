@@ -5,10 +5,11 @@ from apps.users.tests.factories import UserFactory
 
 
 @pytest.fixture(autouse=True)
-def media_storage(settings, tmpdir):
+def _media_storage(settings, tmpdir):
     settings.MEDIA_ROOT = tmpdir.strpath
 
 
-@pytest.fixture
+@pytest.fixture()
 def user() -> User:
+    """Fixture that returns user instance."""
     return UserFactory()

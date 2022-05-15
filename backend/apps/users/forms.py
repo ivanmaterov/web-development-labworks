@@ -8,13 +8,13 @@ User = get_user_model()
 
 
 class UserAdminChangeForm(admin_forms.UserChangeForm):
+    """Form for UserAdmin."""
     class Meta(admin_forms.UserChangeForm.Meta):
         model = User
 
 
 class UserAdminCreationForm(admin_forms.UserCreationForm):
-    """
-    Form for User Creation in the Admin Area.
+    """Form for User Creation in the Admin Area.
     To change user signup, see UserSignupForm and UserSocialSignupForm.
     """
 
@@ -22,21 +22,21 @@ class UserAdminCreationForm(admin_forms.UserCreationForm):
         model = User
 
         error_messages = {
-            "username": {"unique": _("This username has already been taken.")}
+            "username": {
+                "unique": _("This username has already been taken."),
+            },
         }
 
 
 class UserSignupForm(SignupForm):
-    """
-    Form that will be rendered on a user sign up section/screen.
+    """Form that will be rendered on a user sign up section/screen.
     Default fields will be added automatically.
     Check UserSocialSignupForm for accounts created from social.
     """
 
 
 class UserSocialSignupForm(SocialSignupForm):
-    """
-    Renders the form when user has signed up using social accounts.
+    """Renders the form when user has signed up using social accounts.
     Default fields will be added automatically.
     See UserSignupForm otherwise.
     """

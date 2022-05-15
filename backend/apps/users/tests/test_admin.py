@@ -1,3 +1,4 @@
+# pylint: skip-file
 import pytest
 from django.urls import reverse
 
@@ -7,6 +8,7 @@ pytestmark = pytest.mark.django_db
 
 
 class TestUserAdmin:
+    """Test user admin."""
     def test_changelist(self, admin_client):
         url = reverse("admin:users_user_changelist")
         response = admin_client.get(url)

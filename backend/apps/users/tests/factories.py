@@ -1,3 +1,4 @@
+# pylint: skip-file
 from typing import Any, Sequence
 
 from django.contrib.auth import get_user_model
@@ -6,7 +7,7 @@ from factory.django import DjangoModelFactory
 
 
 class UserFactory(DjangoModelFactory):
-
+    """User factory."""
     username = Faker("user_name")
     email = Faker("email")
     name = Faker("name")

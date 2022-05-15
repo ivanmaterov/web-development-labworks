@@ -9,7 +9,7 @@ User = get_user_model()
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
-
+    """View for user detail."""
     model = User
     slug_field = "username"
     slug_url_kwarg = "username"
@@ -19,7 +19,7 @@ user_detail_view = UserDetailView.as_view()
 
 
 class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-
+    """View for user update."""
     model = User
     fields = ["name"]
     success_message = _("Information successfully updated")
@@ -30,7 +30,7 @@ class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         )  # for mypy to know that the user is authenticated
         return self.request.user.get_absolute_url()
 
-    def get_object(self):
+    def get_object(self, queryset=None):
         return self.request.user
 
 
@@ -38,11 +38,14 @@ user_update_view = UserUpdateView.as_view()
 
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
-
+    """View for redirect users."""
     permanent = False
 
-    def get_redirect_url(self):
-        return reverse("users:detail", kwargs={"username": self.request.user.username})
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse(
+            "users:detail",
+            kwargs={"username": self.request.user.username},
+        )
 
 
 user_redirect_view = UserRedirectView.as_view()

@@ -16,7 +16,7 @@ default-docstring-type=google
 ignored-modules=invoke
 
 string-quote=single
-triple-quote=single
+triple-quote=double
 docstring-quote=double
 
 # Settings not configured because of

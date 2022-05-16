@@ -6,10 +6,10 @@ from apps.utils.models import BaseModel
 
 class Category(BaseModel):
     """Model for product categories."""
-    name = models.CharField(
+    title = models.CharField(
         max_length=256,
         db_index=True,
-        verbose_name=_('Name'),
+        verbose_name=_('Title'),
     )
     slug = models.SlugField(
         max_length=256,
@@ -18,7 +18,7 @@ class Category(BaseModel):
     )
 
     class Meta:
-        ordering = ('name', )
+        ordering = ('title', )
         verbose_name = _('Category')
         verbose_name_plural = _('Categories')
 

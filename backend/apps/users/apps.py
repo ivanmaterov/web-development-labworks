@@ -4,8 +4,9 @@ from django.utils.translation import gettext_lazy as _
 
 class UsersConfig(AppConfig):
     """UserConfig for users application."""
-    name = "apps.users"
-    verbose_name = _("Users")
+    name = 'apps.users'
+    default_auto_field = 'django.db.models.BigAutoField'
+    verbose_name = _('Users')
 
     def ready(self):
         try:

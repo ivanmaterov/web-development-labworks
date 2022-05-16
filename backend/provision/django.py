@@ -14,7 +14,7 @@ def manage(context, command, watchers=()):
     """
     return start.run_python(
         context,
-        " ".join(["manage.py", command]),
+        ' '.join(['manage.py', command]),
         watchers=watchers,
     )
 
@@ -22,16 +22,23 @@ def manage(context, command, watchers=()):
 @task
 def makemigrations(context):
     """Run makemigrations command and chown created migrations."""
-    common.success("Django: Make migrations")
-    manage(context, "makemigrations")
+    common.success('Django: Make migrations')
+    manage(context, 'makemigrations')
     system.chown(context)
+
+
+@task
+def check_new_migrations(context):
+    """Check if there is new migrations or not."""
+    common.success('Checking migrations')
+    manage(context, 'makemigrations --check --dry-run')
 
 
 @task
 def migrate(context):
     """Run ``migrate`` command."""
-    common.success("Django: Apply migrations")
-    manage(context, "migrate")
+    common.success('Django: Apply migrations')
+    manage(context, 'migrate')
 
 
 @task
@@ -42,25 +49,25 @@ def run(context):
     # is working successfully
     # if you need more default services to be started define them
     # below, like celery, etc.
-    common.success("Running web app")
+    common.success('Running web app')
     manage(
         context,
-        "runserver_plus 0.0.0.0:8000  --reloader-type stat",
+        'runserver_plus 0.0.0.0:8000  --reloader-type stat',
     )
 
 
 @task
-def shell(context, params=""):
+def shell(context, params=''):
     """Shortcut for manage.py shell_plus command.
     Additional params available here:
         https://django-extensions.readthedocs.io/en/latest/shell_plus.html
     """
-    common.success("Entering Django Shell")
-    manage(context, f"shell_plus --ipython {params}")
+    common.success('Entering Django Shell')
+    manage(context, f'shell_plus --ipython {params}')
 
 
 @task
 def dbshell(context):
     """Open postgresql shell with credentials from either local or dev env."""
-    common.success("Entering DB shell")
-    manage(context, "dbshell")
+    common.success('Entering DB shell')
+    manage(context, 'dbshell')

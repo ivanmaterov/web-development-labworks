@@ -11,8 +11,8 @@ def run_web(context, command, watchers=()):
     """
     return docker.docker_compose_run(
         context,
-        params="--rm --service-ports",
-        container="django",
+        params='--rm --service-ports',
+        container='django',
         command=command,
         watchers=watchers,
     )
@@ -20,4 +20,4 @@ def run_web(context, command, watchers=()):
 
 def run_python(context, command, watchers=()):
     """Run command using web python interpreter."""
-    return run_web(context, " ".join(["python3", command]), watchers=watchers)
+    return run_web(context, ' '.join(['python3', command]), watchers=watchers)

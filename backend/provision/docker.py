@@ -7,9 +7,9 @@ from . import common
 ##############################################################################
 
 MAIN_CONTAINERS = [
-    "django",
-    "postgres",
-    "mailhog",
+    'django',
+    'postgres',
+    'mailhog',
 ]
 
 
@@ -28,7 +28,7 @@ def docker_compose_run(
         command: Command to run in started container
         watchers: Automated responders to command
     """
-    cmd = f"docker-compose run {params} {container} {command}"
+    cmd = f'docker-compose run {params} {container} {command}'
     return context.run(cmd, watchers=watchers)
 
 
@@ -41,13 +41,13 @@ def up_containers(context, containers, detach=True, **kwargs):
         detach: To run them in background
     """
     if containers:
-        common.success(f"Bring up {', '.join(containers)} containers")
+        common.success(f'Bring up {", ".join(containers)} containers')
     else:
-        common.success("Bring up all containers")
+        common.success('Bring up all containers')
     cmd = (
-        f"docker-compose up "
-        f"{'-d ' if detach else ''}"
-        f"{' '.join(containers)}"
+        f'docker-compose up '
+        f'{"-d " if detach else ""}'
+        f'{" ".join(containers)}'
     )
     context.run(cmd)
 
@@ -68,6 +68,6 @@ def clear(context):
     """Stop and remove all containers defined in docker-compose.
     Also remove images.
     """
-    common.success("Clearing docker-compose")
-    context.run("docker-compose rm -f")
-    context.run("docker-compose down -v --rmi all --remove-orphans")
+    common.success('Clearing docker-compose')
+    context.run('docker-compose rm -f')
+    context.run('docker-compose down -v --rmi all --remove-orphans')

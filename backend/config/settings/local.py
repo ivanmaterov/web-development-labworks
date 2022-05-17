@@ -1,4 +1,4 @@
-from config.settings import *  # noqa
+from config.settings.common import *  # noqa
 
 # GENERAL
 # ------------------------------------------------------------------------------

@@ -71,3 +71,10 @@ def clear(context):
     common.success('Clearing docker-compose')
     context.run('docker-compose rm -f')
     context.run('docker-compose down -v --rmi all --remove-orphans')
+
+
+@task
+def build(context):
+    """Build containers using docker-compose."""
+    common.success('Building docker-compose')
+    context.run('docker-compose build')

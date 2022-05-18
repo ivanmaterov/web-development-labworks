@@ -1,0 +1,102 @@
+[
+    {
+      "model": "product.Category",
+      "pk": 1,
+      "fields": {
+        "title": "Electronic",
+        "slug": "electronic",
+        "created": "2022-03-02 15:04",
+        "modified": "2022-03-02 15:04"
+      }
+    },
+    {
+        "model": "product.Category",
+        "pk": 2,
+        "fields": {
+          "title": "Clothes",
+          "slug": "clothes",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 3,
+        "fields": {
+          "title": "Shoes",
+          "slug": "shoes",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 4,
+        "fields": {
+          "title": "Toys",
+          "slug": "toys",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 5,
+        "fields": {
+          "title": "Makeup",
+          "slug": "makeup",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 6,
+        "fields": {
+          "title": "Sport",
+          "slug": "sport",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 7,
+        "fields": {
+          "title": "Beauty",
+          "slug": "beauty",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 8,
+        "fields": {
+          "title": "Smartphones",
+          "slug": "smartphones",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 9,
+        "fields": {
+          "title": "Computers",
+          "slug": "computers",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    },
+    {
+        "model": "product.Category",
+        "pk": 10,
+        "fields": {
+          "title": "Study",
+          "slug": "study",
+          "created": "2022-03-02 15:04",
+          "modified": "2022-03-02 15:04"
+        }
+    }
+  ]

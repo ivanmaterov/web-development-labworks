@@ -1,5 +1,8 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext as _
+from imagekit import models as imagekitmodels
+from imagekit.processors import Transpose
 
 from apps.utils.models import BaseModel
 
@@ -26,10 +29,16 @@ class Product(BaseModel):
         unique=True,
         verbose_name=_('Slug'),
     )
-    image = models.ImageField(
-        upload_to='product/%Y/%m/%d',
-        blank=True,
+    image = imagekitmodels.ProcessedImageField(
         verbose_name=_('Image'),
+        blank=True,
+        null=True,
+        upload_to=settings.DEFAULT_MEDIA_PATH,
+        max_length=512,
+        processors=[Transpose()],
+        options={
+            'quality': 100,
+        },
     )
     description = models.TextField(
         max_length=1000,

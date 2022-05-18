@@ -1,5 +1,6 @@
-from apps.users.api import urls
+from django.urls import include, path
 
-app_name = "api"
-urlpatterns = []
-urlpatterns += urls.urlpatterns
+urlpatterns = [
+    path('', include('apps.users.api.urls')),
+    path('', include('apps.product.api.urls')),
+]

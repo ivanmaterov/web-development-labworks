@@ -1,3 +1,5 @@
+import os
+import uuid
 from .base import ROOT_DIR, APPS_DIR
 
 
@@ -25,4 +27,21 @@ MEDIA_URL = '/media/'
 # FIXTURES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#fixture-dirs
-FIXTURE_DIRS = (str(APPS_DIR / 'fixtures'),)
+FIXTURE_DIRS = [
+    APPS_DIR / 'product/fixtures',
+]
+
+def _default_media_path(model_instance, filename):
+    """Function for generation of upload path for Django model instance.
+    Generates upload path that contain instance's model app, model name,
+    object's ID, salt and file name.
+    """
+    components = model_instance._meta.label_lower.split(".")
+    components.append(str(model_instance.id))
+    components.append(str(uuid.uuid4()))
+    components.append(filename)
+
+    return os.path.join(*components)
+
+
+DEFAULT_MEDIA_PATH = _default_media_path

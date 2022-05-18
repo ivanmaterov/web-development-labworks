@@ -112,7 +112,7 @@ sftp-config.json
 tags
 
 ### Project template
-backend/media/
+media/
 
 .pytest_cache/
 .ipython/

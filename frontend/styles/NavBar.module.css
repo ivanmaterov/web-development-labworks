@@ -1,0 +1,9 @@
+.navbar {
+  margin-top: 64px;
+}
+
+@media(min-height: 600px) {
+  .navbar {
+    margin-top: 56px;
+  }
+}

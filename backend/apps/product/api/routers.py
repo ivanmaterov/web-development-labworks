@@ -4,5 +4,5 @@ from apps.product.api.views import CategoryViewSet, ProductViewSet
 
 router = DefaultRouter()
 
-router.register('products', CategoryViewSet)
-router.register('categories', ProductViewSet)
+router.register('products', ProductViewSet)
+router.register('categories', CategoryViewSet)

@@ -1,0 +1,10 @@
+.box {
+  width: 100%;
+  height: calc(100vh - 64px);
+}
+
+@media(min-height: 600px) {
+  .box {
+    height: calc(100vh - 56px);
+  }
+}

@@ -15,3 +15,8 @@ class ProductViewSet(viewsets.ModelViewSet):
     """View for products."""
     queryset = Product.objects.filter(is_available=True).order_by('category_id')
     serializer_class = ProductSerializer
+    filterset_fields = {
+        'id': (
+            'in', 
+        )
+    }

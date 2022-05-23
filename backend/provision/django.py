@@ -52,7 +52,7 @@ def run(context):
     common.success('Running web app')
     manage(
         context,
-        'runserver_plus 0.0.0.0:8000  --reloader-type stat',
+        'runserver_plus 0.0.0.0:8000 --keep-meta-shutdown --reloader-type stat',
     )
 
 

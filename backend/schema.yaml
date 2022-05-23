@@ -183,6 +183,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -212,6 +213,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '201':
           content:
@@ -235,6 +237,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -269,6 +272,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -302,6 +306,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -324,6 +329,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '204':
           description: No response body
@@ -331,11 +337,22 @@ paths:
     get:
       operationId: products_list
       description: View for products.
+      parameters:
+      - in: query
+        name: id__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
       tags:
       - products
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -365,6 +382,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '201':
           content:
@@ -388,6 +406,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -422,6 +441,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -455,6 +475,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -477,6 +498,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '204':
           description: No response body
@@ -488,6 +510,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -513,6 +536,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -547,6 +571,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -580,6 +605,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -595,6 +621,7 @@ paths:
       security:
       - cookieAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:

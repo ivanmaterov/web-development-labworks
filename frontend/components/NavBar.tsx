@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { SignInButton } from './SignInButton';
 import { SignOutButton } from './SignOutButton';
+import { Cart } from './cart/Cart';
 
 
 const NavBar: VFC = () => {
@@ -27,9 +28,8 @@ const NavBar: VFC = () => {
           justifyContent: 'space-between',
         }}>
           <Box>
-            <>
-              <Button variant='contained' color='secondary' onClick={() => navigateTo('/shop/goods')}>Goods</Button>
-            </>
+            <Button variant='contained' color='secondary' onClick={() => navigateTo('/shop/goods')}>Goods</Button>
+            <Cart />
           </Box>
           <Box sx={{
             display: 'flex',

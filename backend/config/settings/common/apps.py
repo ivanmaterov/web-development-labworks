@@ -23,6 +23,7 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'drf_spectacular',
     'imagekit',
+    'django_filters',
 ]
 
 LOCAL_APPS = [

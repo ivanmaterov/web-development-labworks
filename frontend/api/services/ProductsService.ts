@@ -12,13 +12,19 @@ export class ProductsService {
 
     /**
      * View for products.
+     * @param idIn Multiple values may be separated by commas.
      * @returns Product
      * @throws ApiError
      */
-    public static productsList(): CancelablePromise<Array<Product>> {
+    public static productsList(
+        idIn?: Array<number>,
+    ): CancelablePromise<Array<Product>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/products/',
+            query: {
+                'id__in': idIn,
+            },
         });
     }
 

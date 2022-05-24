@@ -649,39 +649,32 @@ components:
       - username
     Category:
       type: object
-      description: Serializer for categories.
       properties:
         id:
           type: integer
-          readOnly: true
         title:
           type: string
           maxLength: 256
       required:
-      - id
       - title
     PatchedCategory:
       type: object
-      description: Serializer for categories.
       properties:
         id:
           type: integer
-          readOnly: true
         title:
           type: string
           maxLength: 256
     PatchedProduct:
       type: object
-      description: Serializer for products.
       properties:
         id:
           type: integer
-          readOnly: true
         name:
           type: string
           maxLength: 150
         category:
-          type: integer
+          $ref: '#/components/schemas/Category'
         price:
           type: string
           format: decimal
@@ -712,16 +705,14 @@ components:
           readOnly: true
     Product:
       type: object
-      description: Serializer for products.
       properties:
         id:
           type: integer
-          readOnly: true
         name:
           type: string
           maxLength: 150
         category:
-          type: integer
+          $ref: '#/components/schemas/Category'
         price:
           type: string
           format: decimal
@@ -735,7 +726,6 @@ components:
           maxLength: 1000
       required:
       - category
-      - id
       - name
       - price
     User:

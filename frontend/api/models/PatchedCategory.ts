@@ -2,10 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Serializer for categories.
- */
 export type PatchedCategory = {
-    readonly id?: number;
+    id?: number;
     title?: string;
 };

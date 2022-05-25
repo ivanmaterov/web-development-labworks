@@ -29,6 +29,7 @@ const NavBar: VFC = () => {
         }}>
           <Box>
             <Button variant='contained' color='secondary' onClick={() => navigateTo('/shop/goods')}>Goods</Button>
+            <Button variant='contained' color='secondary' onClick={() => navigateTo('/shop/management')}>Management</Button>
             <Cart />
           </Box>
           <Box sx={{

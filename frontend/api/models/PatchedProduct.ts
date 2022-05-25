@@ -2,13 +2,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Serializer for products.
- */
+import type { Category } from './Category';
+
 export type PatchedProduct = {
-    readonly id?: number;
+    id?: number;
     name?: string;
-    category?: number;
+    category?: Category;
     price?: string;
     image?: string | null;
     description?: string;

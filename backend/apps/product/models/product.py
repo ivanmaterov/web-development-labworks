@@ -16,6 +16,7 @@ class Product(BaseModel):
         related_name='products',
         on_delete=models.CASCADE,
         verbose_name=_('Category'),
+        null=True,
     )
 
     name = models.CharField(

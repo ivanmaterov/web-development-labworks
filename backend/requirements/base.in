@@ -17,6 +17,7 @@ django-allauth  # https://github.com/pennersr/django-allauth
 django-crispy-forms  # https://github.com/django-crispy-forms/django-crispy-forms
 crispy-bootstrap5 # https://github.com/django-crispy-forms/crispy-bootstrap5
 django-redis  # https://github.com/jazzband/django-redis
+channels  # https://github.com/django/channels
 # Django REST Framework
 django-filter==21.1 # https://github.com/carltongibson/django-filter
 djangorestframework  # https://github.com/encode/django-rest-framework

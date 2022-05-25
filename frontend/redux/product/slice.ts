@@ -1,6 +1,6 @@
 import { createEntityAdapter, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "../../api/models/Product";
-import { fetchProducts } from "./dispatchers";
+import { fetchProducts, removeProductById, updateProduct } from "./dispatchers";
 
 
 export const productAdapter = createEntityAdapter<Product>({
@@ -19,4 +19,14 @@ export const productsSlice = createSlice({
     .addCase(fetchProducts.fulfilled, (state, action) => {
       productAdapter.setMany(state, action.payload);
     })
+    .addCase(removeProductById.fulfilled, (state, action) => {
+      productAdapter.removeOne(state, action.payload);
+    })
+    .addCase(updateProduct.fulfilled, (state, action) => {
+      productAdapter.setOne(state, action.payload);
+    })
 });
+
+export const {
+  addProducts,
+} = productsSlice.actions;

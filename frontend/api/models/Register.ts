@@ -2,8 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type AuthToken = {
+export type Register = {
     username: string;
-    password: string;
-    readonly token: string;
+    email?: string;
+    password1: string;
+    password2: string;
 };

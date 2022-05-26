@@ -4,16 +4,16 @@ import { VFC } from 'react';
 import style from '../styles/NavBar.module.css'
 import { useRouter } from 'next/router';
 import { useAppDispatch, useAppSelector } from '../redux/store';
-import { SignInButton } from './SignInButton';
+import { SignIn } from './SignInComponent';
 import { SignOutButton } from './SignOutButton';
 import { Cart } from './cart/Cart';
+import { selectIsSignedIn } from '../redux/auth/selectors';
 
 
 const NavBar: VFC = () => {
   const router = useRouter();
 
-  // const isSignedIn = useAppSelector(selectIsSignedIn);
-  // const email = useAppSelector(selectEmail);
+  const isSignedIn = useAppSelector(selectIsSignedIn);
 
   const navigateTo = (url: string) => {
     router.push(url);
@@ -36,8 +36,7 @@ const NavBar: VFC = () => {
             display: 'flex',
             flexDirection: 'row',
           }}>
-            {/* {email ? <Typography sx={{marginRight: '5px'}} variant='h6'>{email}</Typography>: <></>}
-            {isSignedIn ? <SignOutButton /> : <SignInButton />} */}
+            {isSignedIn ? <SignOutButton /> : <SignIn />}
           </Box>
         </Toolbar>
       </AppBar>

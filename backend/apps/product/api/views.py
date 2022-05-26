@@ -20,7 +20,3 @@ class ProductViewSet(viewsets.ModelViewSet):
             'in', 
         )
     }
-
-    def list(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()
-        return super().list(request, *args, **kwargs)

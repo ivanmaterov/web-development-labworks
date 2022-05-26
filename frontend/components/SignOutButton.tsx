@@ -1,12 +1,13 @@
 import { Button } from "@mui/material";
 import { memo, VFC } from "react";
 import { useAppDispatch } from "../redux/store";
+import { signOut } from "../redux/auth/dispatchers";
 
 const SignOutButtonComponent: VFC = () => {
   const dispatch = useAppDispatch();
 
   const onClick = () => {
-    // dispatch();
+    dispatch(signOut());
   }
 
   return (

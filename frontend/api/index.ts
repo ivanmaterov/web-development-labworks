@@ -6,16 +6,23 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
-export type { AuthToken } from './models/AuthToken';
 export type { Category } from './models/Category';
+export type { Login } from './models/Login';
+export type { PasswordChange } from './models/PasswordChange';
+export type { PasswordReset } from './models/PasswordReset';
+export type { PasswordResetConfirm } from './models/PasswordResetConfirm';
 export type { PatchedCategory } from './models/PatchedCategory';
 export type { PatchedProduct } from './models/PatchedProduct';
-export type { PatchedUser } from './models/PatchedUser';
+export type { PatchedUserDetails } from './models/PatchedUserDetails';
 export type { Product } from './models/Product';
-export type { User } from './models/User';
+export type { Register } from './models/Register';
+export type { ResendEmailVerification } from './models/ResendEmailVerification';
+export type { RestAuthDetail } from './models/RestAuthDetail';
+export type { Token } from './models/Token';
+export type { UserDetails } from './models/UserDetails';
+export type { VerifyEmail } from './models/VerifyEmail';
 
 export { ApiService } from './services/ApiService';
-export { AuthTokenService } from './services/AuthTokenService';
+export { AuthService } from './services/AuthService';
 export { CategoriesService } from './services/CategoriesService';
 export { ProductsService } from './services/ProductsService';
-export { UsersService } from './services/UsersService';

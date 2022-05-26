@@ -1,3 +1,4 @@
+from click import command
 from invoke import task
 
 from . import common, start, system
@@ -18,6 +19,11 @@ def manage(context, command, watchers=()):
         watchers=watchers,
     )
 
+
+def loadfixture(fixtures=[]):
+    """Load fixture using manage invoke."""
+    import ipdb; ipdb.set_trace()
+    manage(command=' '.join(['loaddata', *fixtures]))
 
 @task
 def makemigrations(context):
@@ -55,6 +61,15 @@ def run(context):
         'runserver_plus 0.0.0.0:8000 --keep-meta-shutdown --reloader-type stat',
     )
 
+@task
+def run_channels_server(context):
+    """Run development web-server for django-channels."""
+
+    common.success('Running web app')
+    manage(
+        context,
+        'runserver 0.0.0.0:8000',
+    )
 
 @task
 def shell(context, params=''):

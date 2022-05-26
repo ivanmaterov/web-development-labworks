@@ -12,3 +12,4 @@ from .path import *
 from .security import *
 from .templates import *
 from .urls import *
+from .allauth import *

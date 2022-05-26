@@ -2,14 +2,15 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 from apps.product.models import Product
-from apps.users.models import User
 from apps.utils.models import BaseModel
 
+
+from django.contrib.auth import get_user_model
 
 class Cart(BaseModel):
     """Model for product cart."""
     user = models.ForeignKey(
-        to=User,
+        to=get_user_model(),
         related_name='users',
         on_delete=models.SET_NULL,
         null=True,

@@ -7,6 +7,7 @@ celery # pyup: < 6.0  # https://github.com/celery/celery
 django-celery-beat  # https://github.com/celery/django-celery-beat
 flower  # https://github.com/mher/flower
 six
+autobahn==21.2.1
 
 # Django
 # ------------------------------------------------------------------------------
@@ -18,10 +19,13 @@ django-crispy-forms  # https://github.com/django-crispy-forms/django-crispy-form
 crispy-bootstrap5 # https://github.com/django-crispy-forms/crispy-bootstrap5
 django-redis  # https://github.com/jazzband/django-redis
 channels  # https://github.com/django/channels
+channels-redis  # https://github.com/django/channels_redis
+djangochannelsrestframework  # https://github.com/NilCoalescing/djangochannelsrestframework
 # Django REST Framework
 django-filter==21.1 # https://github.com/carltongibson/django-filter
 djangorestframework  # https://github.com/encode/django-rest-framework
 django-cors-headers # https://github.com/adamchainz/django-cors-headers
+dj-rest-auth  # https://github.com/iMerica/dj-rest-auth
 # DRF-spectacular for api documentation
 drf-spectacular  # https://github.com/tfranzel/drf-spectacular
 django-imagekit # https://github.com/matthewwithanm/django-imagekit

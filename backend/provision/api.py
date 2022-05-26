@@ -1,6 +1,6 @@
-from . import common
 from invoke import task
-from . import django
+
+from . import common, django
 
 
 @task

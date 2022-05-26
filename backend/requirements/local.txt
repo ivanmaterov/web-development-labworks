@@ -4,6 +4,8 @@
 #
 #    pip-compile local.in
 #
+aioredis==1.3.1
+    # via channels-redis
 amqp==5.1.1
     # via kombu
 anyio==3.6.1
@@ -15,6 +17,7 @@ argon2-cffi-bindings==21.2.0
 asgiref==3.5.2
     # via
     #   channels
+    #   channels-redis
     #   daphne
     #   django
 astroid==2.11.5
@@ -24,7 +27,9 @@ astroid==2.11.5
 asttokens==2.0.5
     # via stack-data
 async-timeout==4.0.2
-    # via redis
+    # via
+    #   aioredis
+    #   redis
 attrs==21.4.0
     # via
     #   automat
@@ -33,8 +38,10 @@ attrs==21.4.0
     #   pytest
     #   service-identity
     #   twisted
-autobahn==22.4.2
-    # via daphne
+autobahn==21.2.1
+    # via
+    #   -r base.in
+    #   daphne
 automat==20.2.0
     # via twisted
 backcall==0.2.0
@@ -57,6 +64,11 @@ cffi==1.15.0
 cfgv==3.3.1
     # via pre-commit
 channels==3.0.4
+    # via
+    #   -r base.in
+    #   channels-redis
+    #   djangochannelsrestframework
+channels-redis==3.4.0
     # via -r base.in
 charset-normalizer==2.0.12
     # via requests
@@ -107,11 +119,14 @@ dill==0.3.5.1
     # via pylint
 distlib==0.3.4
     # via virtualenv
+dj-rest-auth==2.2.4
+    # via -r base.in
 django==3.2.12
     # via
     #   -r base.in
     #   channels
     #   crispy-bootstrap5
+    #   dj-rest-auth
     #   django-allauth
     #   django-appconf
     #   django-celery-beat
@@ -124,6 +139,7 @@ django==3.2.12
     #   django-stubs
     #   django-stubs-ext
     #   django-timezone-field
+    #   djangochannelsrestframework
     #   djangorestframework
     #   drf-spectacular
 django-allauth==0.50.0
@@ -162,9 +178,13 @@ django-stubs-ext==0.4.0
     # via django-stubs
 django-timezone-field==4.2.3
     # via django-celery-beat
+djangochannelsrestframework==1.0.0
+    # via -r base.in
 djangorestframework==3.13.1
     # via
     #   -r base.in
+    #   dj-rest-auth
+    #   djangochannelsrestframework
     #   drf-spectacular
 djangorestframework-stubs==1.5.0
     # via -r local.in
@@ -193,6 +213,8 @@ flake8-pytest-style==1.6.0
     # via -r local.in
 flower==1.0.0
     # via -r base.in
+hiredis==2.0.0
+    # via aioredis
 humanize==4.1.0
     # via flower
 hyperlink==21.0.0
@@ -244,6 +266,8 @@ mccabe==0.6.1
     #   -r local.in
     #   flake8
     #   pylint
+msgpack==1.0.3
+    # via channels-redis
 mypy==0.942
     # via
     #   -r local.in

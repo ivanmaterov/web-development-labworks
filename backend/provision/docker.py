@@ -9,7 +9,7 @@ from . import common
 MAIN_CONTAINERS = [
     'django',
     'postgres',
-    'mailhog',
+    'redis',
 ]
 
 

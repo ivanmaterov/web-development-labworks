@@ -21,6 +21,7 @@
     console.log(room_pk)
     console.log(request_id)
     console.log("request", '{{request}}')
+    console.log(`ws://${window.location.host}/ws/chat/?token=${localStorage.getItem('Token')}`)
 
     const chatSocket = new WebSocket(`ws://${window.location.host}/ws/chat/?token=${localStorage.getItem('Token')}`);
 

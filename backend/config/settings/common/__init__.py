@@ -13,3 +13,4 @@ from .security import *
 from .templates import *
 from .urls import *
 from .allauth import *
+from .django_channels import *

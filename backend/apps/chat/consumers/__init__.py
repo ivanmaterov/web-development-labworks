@@ -1,1 +1,1 @@
-from .chat import ChatConsumer
+from .chat import RoomConsumer

@@ -3,7 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { signIn, signOut } from './dispatchers';
 
 const initialState: AuthState = {
-  token: '',
+  username: '',
+  token: null,
   isSignedIn: false,
 }
 
@@ -29,7 +30,7 @@ export const authSlice = createSlice({
       }
     })
     .addCase(signOut.fulfilled, (state) => {
-      state.token = '';
+      state.token = null;
       state.isSignedIn = false;
     })
 })
